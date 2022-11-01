@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>covid api</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+	<section class="container m-auto">
+
+
+		<div class="m-auto">
+			
+			<h1 class="text-center">Coivd-19 update</h1>
+		</div>
+
+		<div class="table-bordered">
+
+			<table id="tval">
+
+				<thead>
+					<tr>
+						<th>Country</th>
+						<th>TotalConfirmed</th>
+						<th>NewConfirmed</th>
+						<th>NewRecovered</th>
+					</tr>
+				</thead>
+				
+			</table>
+			
+
+		</div>
+
+
+		
+	</section>
+	<script src="jquery.min.js"></script>
+
+	<script type="text/javascript">
+
+			var tval=document.getElementById('tval');
+
+			console.log(tval)
+
+			$.get("https://api.covid19api.com/summary",function(data){
+
+
+					for(let i=1; i<data['Countries'].length;i++){
+
+						var rw = tval.insertRow();
+
+
+						rw.insertcells(0);
+					};
+
+			})
+		
+	</script>
+
+</body>
+</html>
